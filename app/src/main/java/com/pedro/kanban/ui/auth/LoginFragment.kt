@@ -1,18 +1,16 @@
-package com.pedro.kanban.ui
+package com.pedro.kanban.ui.auth
 
-import android.app.FragmentContainer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.pedro.kanban.R
-import com.pedro.kanban.databinding.ActivityMainBinding
-import com.pedro.kanban.databinding.FragmentSplashBinding
+import com.pedro.kanban.databinding.FragmentLoginBinding
 
-class SplashFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private  var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -20,8 +18,9 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSplashBinding.inflate(inflater,container,false)
-        return binding.root
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onDestroyView() {

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SplashFragment"
-    android:background="@color/color_default"
     android:gravity="center">
 
     <ImageView
