@@ -21,11 +21,80 @@
 
 
         <TextView
-            android:id="@+id/texto"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
             android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Digite seu E-mail"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Senha"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/inputSenha"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Digite sua senha"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:layout_marginTop="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/color_default"
+            android:backgroundTint="@null"
+            android:layout_marginTop="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criar conta"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recuperar conta"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+
+
+            </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+
+
+
 
     </LinearLayout>
 
