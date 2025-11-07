@@ -7,10 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/baseline_arrow_back_24">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Criar Conta"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,36 +81,11 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="ENVIAR"
             android:textColor="@color/color_default"
             android:backgroundTint="@null"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_edit_text"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Criar conta"
-                android:textColor="@color/white"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recuperar conta"
-                android:textColor="@color/white"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-
-
-            </LinearLayout>
 
         <ProgressBar
             android:layout_width="wrap_content"
