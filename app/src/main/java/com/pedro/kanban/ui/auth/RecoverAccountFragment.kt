@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.pedro.kanban.R
 import com.pedro.kanban.databinding.FragmentLoginBinding
+import com.pedro.kanban.databinding.FragmentRecoverAccountBinding
 
-class LoginFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+class RecoverAccountFragment : Fragment() {
+
+    private var _binding: FragmentRecoverAccountBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,9 +20,8 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        _binding = FragmentRecoverAccountBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onDestroyView() {
