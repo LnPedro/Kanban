@@ -1,6 +1,5 @@
 package com.pedro.kanban.ui
 
-import android.app.FragmentContainer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -10,12 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.pedro.kanban.R
-import com.pedro.kanban.databinding.ActivityMainBinding
+import com.pedro.kanban.databinding.FragmentDoingBinding
+import com.pedro.kanban.databinding.FragmentRecoverAccountBinding
 import com.pedro.kanban.databinding.FragmentSplashBinding
 
-class SplashFragment : Fragment() {
-
-    private  var _binding: FragmentSplashBinding? = null
+class DoingFragment : Fragment() {
+    private var _binding: FragmentDoingBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,23 +22,13 @@ class SplashFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSplashBinding.inflate(inflater,container,false)
+        _binding = FragmentDoingBinding.inflate(inflater, container, false)
         return binding.root
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        Handler(Looper.getMainLooper()).postDelayed({checkAuth()},3000)
-    }
-
-    private fun checkAuth(){
-        findNavController().navigate(R.id.action_splashFragment_to_autentication)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
