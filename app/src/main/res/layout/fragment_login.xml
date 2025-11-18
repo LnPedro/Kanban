@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="0dp"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="@color/color_default"
+            android:textColor="@color/white"
             android:backgroundTint="@null"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_edit_text"/>
@@ -101,8 +101,19 @@
             tools:visibility="visible"
             android:visibility="invisible" />
 
-
-
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PEDRO ABRAÃO LINO DA SILVA\n20232TIIMI0233"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.69" />
 
 
     </LinearLayout>
