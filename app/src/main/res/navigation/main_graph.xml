@@ -14,7 +14,10 @@
         app:popUpToInclusive="true">
         <action
             android:id="@+id/action_splashFragment_to_autentication"
-            app:destination="@id/autentication" />
+            app:destination="@id/autentication"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true">
+        </action>
     </fragment>
     <navigation android:id="@+id/autentication"
         app:startDestination="@id/loginFragment">
