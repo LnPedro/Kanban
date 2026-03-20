@@ -10,6 +10,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout1"
+            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -23,6 +24,7 @@
                 app:tabMode="scrollable"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
+                app:tabTextAppearance="@style/CustomTabLayout"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +50,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

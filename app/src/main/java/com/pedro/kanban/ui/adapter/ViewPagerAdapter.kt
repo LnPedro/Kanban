@@ -10,7 +10,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
 FragmentStateAdapter(fragmentActivity) {
 
     private val fragmentList: MutableList<Fragment> = ArrayList()
-    private val titleList: MutableList<Fragment> = ArrayList()
+    private val titleList: MutableList<Int> = ArrayList()
 
     fun getTitle(position: Int) : Int {
         return titleList[position]
@@ -23,7 +23,7 @@ FragmentStateAdapter(fragmentActivity) {
     }
 
     override fun createFragment(position: Int): Fragment {
-        fragmentList[position]
+        return fragmentList[position]
     }
 
     override fun getItemCount(): Int {
