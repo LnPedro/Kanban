@@ -50,6 +50,7 @@ class HomeFragment : Fragment() {
         }.attach()
 
 
+
     }
 
     override fun onDestroyView() {
