@@ -13,6 +13,21 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+
+
+    <style name="BottomSheetDialogWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialogWrapper</item>
+    </style>
+    
+    <style name="ButtonTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+
+    </style>
     
 
 </resources>

@@ -5,5 +5,11 @@
     <string name="status_task_todo">A Fazer</string>
     <string name="status_task_doing">Fazendo</string>
     <string name="status_task_done">Feito</string>
+    <string name="text_title_warning">Atenção</string>
+    <string name="passwordEmpty">Preencha a senha!</string>
+    <string name="emailEmpty">Preencha com seu Email!</string>
+    <string name="btnText">Tudo bem</string>
+    <string name="descriptionEmpty">Preencha com uma descrição</string>
+
 
 </resources>

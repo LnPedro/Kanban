@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.pedro.kanban.R
 import com.pedro.kanban.databinding.FragmentLoginBinding
+import com.pedro.kanban.util.showBottomSheet
 
 class LoginFragment : Fragment() {
 
@@ -32,10 +34,10 @@ class LoginFragment : Fragment() {
         initListner()
     }
 
-    private fun initListner(){
+    private fun initListner() {
 
         binding.bntLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_global_homeFragment)
+            validateData()
         }
 
         binding.bntRegister.setOnClickListener {
@@ -47,6 +49,23 @@ class LoginFragment : Fragment() {
         }
     }
 
+    private fun validateData() {
+
+        val email = binding.inputEmail.text.toString().trim()
+        val senha = binding.inputSenha.text.toString().trim()
+
+        if (email.isNotBlank()) {
+            if (senha.isNotBlank()) {
+                Toast.makeText(requireContext(), "Bem Vindo!", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_global_homeFragment)
+            } else {
+                showBottomSheet(menssage = R.string.passwordEmpty)
+            }
+        } else {
+            showBottomSheet(menssage = R.string.emailEmpty)
+        }
+
+    }
 
 
     override fun onDestroyView() {
