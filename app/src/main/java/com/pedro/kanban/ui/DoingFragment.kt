@@ -8,12 +8,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedro.kanban.R
+import com.pedro.kanban.data.model.Task
 import com.pedro.kanban.databinding.FragmentDoingBinding
 import com.pedro.kanban.databinding.FragmentRecoverAccountBinding
 import com.pedro.kanban.databinding.FragmentSplashBinding
+import com.pedro.kanban.ui.adapter.TaskAdapter
 
 class DoingFragment : Fragment() {
+    private lateinit var taskAdapter: TaskAdapter
+
     private var _binding: FragmentDoingBinding? = null
     private val binding get() = _binding!!
 
@@ -25,6 +30,27 @@ class DoingFragment : Fragment() {
         _binding = FragmentDoingBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerViewTask(getTask())
+    }
+
+    private fun initRecyclerViewTask(taskList: List<Task>) {
+
+        taskAdapter = TaskAdapter(taskList)
+        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerViewTask.setHasFixedSize(true)
+
+        binding.recyclerViewTask.adapter = taskAdapter
+
+    }
+
+    private fun getTask() = listOf(
+
+        Task("1", "pedro5"),
+        Task("2", "pedro6")
+    )
 
     override fun onDestroyView() {
         super.onDestroyView()
