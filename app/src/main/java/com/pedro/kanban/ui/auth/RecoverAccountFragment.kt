@@ -49,7 +49,7 @@ class RecoverAccountFragment : Fragment() {
         if (email.isNotBlank()){
             Toast.makeText(requireContext(), "Um email foi enviado", Toast.LENGTH_SHORT).show()
         } else {
-            showBottomSheet(menssage = R.string.emailEmpty)
+            showBottomSheet(menssage = getString(R.string.emailEmpty))
         }
     }
 

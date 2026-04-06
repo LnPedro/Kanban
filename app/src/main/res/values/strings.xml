@@ -6,10 +6,32 @@
     <string name="status_task_doing">Fazendo</string>
     <string name="status_task_done">Feito</string>
     <string name="text_title_warning">Atenção</string>
+
+    <!-- Gerais -->
     <string name="passwordEmpty">Preencha a senha!</string>
     <string name="emailEmpty">Preencha com seu Email!</string>
     <string name="btnText">Tudo bem</string>
     <string name="descriptionEmpty">Preencha com uma descrição</string>
+
+    <!-- Login Fragment -->
+    <string name="Input_email_login_fragment">Email</string>
+    <string name="Input_password_login_fragment">Senha</string>
+    <string name="text_title_login_fragment">Kanban Login</string>
+
+    <!-- Recover Account Fragment -->
+    <string name="hint_edittext_email_recover_fragment">Digite seu E-mail</string>
+    <string name="text_email_rcover_fragment">E-mail</string>
+
+    <!-- Form Task Fragment -->
+    <string name="text_title_form_task_fragment">Nova Tarefa</string>
+    <string name="description_empty_form_task_fragment">Descrição</string>
+    <string name="situation_form_task_fragment">Situação</string>
+
+    <!-- Register Fragment -->
+    <string name="text_title_register_fragment">Criar Conta</string>
+    <string name="hint_edittext_email_register_fragment">Digite seu E-mail</string>
+    <string name="hint_edittext_password_register_fragment">Digite sua senha</string>
+
 
 
 </resources>

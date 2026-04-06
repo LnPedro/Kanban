@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
+                android:text="@string/text_title_register_fragment"
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"/>
 
@@ -68,11 +68,11 @@
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Digite seu E-mail"
+            android:hint="@string/hint_edittext_email_register_fragment"
+            style="@style/EditTextTheme"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
             android:layout_marginTop="4dp"
-            android:background="@drawable/bg_edit_text"/>
+            />
 
         <TextView
             android:id="@+id/senha"
@@ -85,21 +85,20 @@
             android:id="@+id/inputSenha"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Digite sua senha"
+            android:hint="@string/hint_edittext_password_register_fragment"
             android:inputType="textPassword"
-            android:padding="10dp"
+            style="@style/EditTextTheme"
             android:layout_marginTop="4dp"
-            android:background="@drawable/bg_edit_text"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ENVIAR"
-            android:textColor="@color/color_default"
-            android:backgroundTint="@null"
+            style="@style/ButtonTheme"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_edit_text"/>
+            />
 
         <ProgressBar
             android:layout_width="wrap_content"

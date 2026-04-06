@@ -26,7 +26,7 @@ fun Fragment.showBottomSheet(
 
     titleDialog: Int? = null,
     titlebutton: Int? = null,
-    menssage: Int,
+    menssage: String,
     onClick: () -> Unit ={}
 
 ){
@@ -35,7 +35,7 @@ fun Fragment.showBottomSheet(
     val binding: BottomSheetBinding = BottomSheetBinding.inflate(layoutInflater, null, false)
 
     binding.textViewTitle.text = getText(titleDialog?: R.string.text_title_warning)
-    binding.textViewMenssage.text = getText(menssage)
+    binding.textViewMenssage.text = menssage
     binding.btnOK.text = getText(titleDialog?: R.string.btnText)
     binding.btnOK.setOnClickListener {
         onClick()

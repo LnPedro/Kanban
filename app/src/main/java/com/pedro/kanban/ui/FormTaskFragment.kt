@@ -51,7 +51,7 @@ class FormTaskFragment : Fragment() {
             Toast.makeText(requireContext(), "Nova tarefa criada", Toast.LENGTH_SHORT).show()
         } else {
 
-            showBottomSheet(menssage = R.string.descriptionEmpty)
+            showBottomSheet(menssage = getString(R.string.descriptionEmpty))
         }
     }
 

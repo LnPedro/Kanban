@@ -52,10 +52,10 @@ class RegisterFragment : Fragment() {
                 Toast.makeText(requireContext(), "Bem Vindo!", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_global_homeFragment)
             } else {
-                showBottomSheet(menssage = R.string.passwordEmpty)
+                showBottomSheet(menssage = getString(R.string.passwordEmpty))
             }
         } else {
-            showBottomSheet(menssage = R.string.emailEmpty)
+            showBottomSheet(menssage = getString(R.string.emailEmpty))
         }
 
     }

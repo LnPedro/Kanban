@@ -20,50 +20,62 @@
         android:layout_marginHorizontal="25dp"
         android:gravity="center">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_title_login_fragment"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
 
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/Input_email_login_fragment"
             android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            style="@style/EditTextTheme"
             android:hint="Digite seu E-mail"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_edit_text"/>
+            android:layout_marginTop="4dp"/>
 
         <TextView
             android:id="@+id/senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/Input_password_login_fragment"
             android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/inputSenha"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            style="@style/EditTextTheme"
             android:hint="Digite sua senha"
             android:inputType="textPassword"
-            android:padding="10dp"
             android:layout_marginTop="4dp"
-            android:background="@drawable/bg_edit_text"/>
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bntLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="@color/white"
-            android:backgroundTint="@null"
+            style="@style/ButtonTheme"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_edit_text"/>
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

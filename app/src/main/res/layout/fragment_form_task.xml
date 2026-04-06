@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nova Tarefa"
+                android:text="@string/text_title_form_task_fragment"
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"/>
 
@@ -38,7 +38,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição"
+            android:text="@string/description_empty_form_task_fragment"
             android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
             android:id="@+id/editTextDescricao"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/bg_edit_text"
+            style="@style/EditTextTheme"
             android:hint="Informe sua nova tarefa"
             app:layout_constraintTop_toBottomOf="@id/textView"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição"
+            android:text="@string/situation_form_task_fragment"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/editTextDescricao"
             app:layout_constraintStart_toStartOf="parent"
@@ -106,12 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/radioGroup"
-            android:textColor="@color/color_default"
             android:text="Salvar"
-            android:backgroundTint="@null"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/bg_edit_text"
+            style="@style/ButtonTheme"
             />
 
 
