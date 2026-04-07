@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedro.kanban.R
+import com.pedro.kanban.data.model.Status
 import com.pedro.kanban.data.model.Task
 import com.pedro.kanban.databinding.FragmentDoingBinding
 import com.pedro.kanban.databinding.FragmentTodoBinding
@@ -46,7 +48,7 @@ class TodoFragment : Fragment() {
 
     private fun initRecyclerViewTask(taskList: List<Task>) {
 
-        taskAdapter = TaskAdapter(taskList)
+        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task, option)}
         binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewTask.setHasFixedSize(true)
 
@@ -54,10 +56,30 @@ class TodoFragment : Fragment() {
 
     }
 
+    private fun optionSelected(task:Task, option: Int){
+
+        when(option){
+
+            TaskAdapter.SELECT_REMOVER -> {
+                Toast.makeText(requireContext(), "REMOVENDO", Toast.LENGTH_SHORT).show()
+            }
+            TaskAdapter.SELECT_EDIT -> {
+                Toast.makeText(requireContext(), "EDITANDO", Toast.LENGTH_SHORT).show()
+            }
+            TaskAdapter.SELECT_DETAILS -> {
+                Toast.makeText(requireContext(), "DETALHANDO", Toast.LENGTH_SHORT).show()
+            }
+            TaskAdapter.SELECT_NEXT -> {
+                Toast.makeText(requireContext(), "PROXIMO", Toast.LENGTH_SHORT).show()
+            }
+
+        }
+    }
+
     private fun getTask() = listOf(
 
-        Task("1", "pedro1"),
-        Task("2", "pedro2")
+        Task("1", "Tarefa Teste 1", Status.TODO),
+        Task("2", "Tarefa Teste 2", Status.TODO)
     )
 
     override fun onDestroyView() {

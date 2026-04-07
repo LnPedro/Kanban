@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pedro.kanban.R
+import com.pedro.kanban.data.model.Status
 import com.pedro.kanban.data.model.Task
 import com.pedro.kanban.databinding.FragmentDoingBinding
 import com.pedro.kanban.databinding.FragmentDoneBinding
@@ -40,7 +41,7 @@ class DoneFragment : Fragment() {
 
     private fun initRecyclerViewTask(taskList: List<Task>) {
 
-        taskAdapter = TaskAdapter(taskList)
+        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task, option)}
         binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewTask.setHasFixedSize(true)
 
@@ -48,10 +49,17 @@ class DoneFragment : Fragment() {
 
     }
 
+    private fun optionSelected(task:Task, option: Int){
+
+
+
+
+    }
+
     private fun getTask() = listOf(
 
-        Task("1", "pedro3"),
-        Task("2", "pedro4")
+        Task("5", "Tarefa Teste 5",Status.DONE),
+        Task("6", "Tarefa Teste 6",Status.DONE)
     )
 
     override fun onDestroyView() {
