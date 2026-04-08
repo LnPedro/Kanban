@@ -35,8 +35,8 @@ class TodoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListeners()
-        initRecyclerViewTask(getTask())
-
+        initRecyclerViewTask()
+        getTask()
     }
 
 
@@ -46,29 +46,35 @@ class TodoFragment : Fragment() {
         }
     }
 
-    private fun initRecyclerViewTask(taskList: List<Task>) {
+    private fun initRecyclerViewTask() {
+        taskAdapter = TaskAdapter(requireContext()) {
+            task, option -> optionSelected(task, option)
+        }
 
-        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task, option)}
-        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewTask.setHasFixedSize(true)
-
-        binding.recyclerViewTask.adapter = taskAdapter
+        with(binding.recyclerViewTask) {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = taskAdapter
+        }
 
     }
 
-    private fun optionSelected(task:Task, option: Int){
+    private fun optionSelected(task: Task, option: Int) {
 
-        when(option){
+        when (option) {
 
             TaskAdapter.SELECT_REMOVER -> {
                 Toast.makeText(requireContext(), "REMOVENDO", Toast.LENGTH_SHORT).show()
             }
+
             TaskAdapter.SELECT_EDIT -> {
                 Toast.makeText(requireContext(), "EDITANDO", Toast.LENGTH_SHORT).show()
             }
+
             TaskAdapter.SELECT_DETAILS -> {
                 Toast.makeText(requireContext(), "DETALHANDO", Toast.LENGTH_SHORT).show()
             }
+
             TaskAdapter.SELECT_NEXT -> {
                 Toast.makeText(requireContext(), "PROXIMO", Toast.LENGTH_SHORT).show()
             }
@@ -76,11 +82,16 @@ class TodoFragment : Fragment() {
         }
     }
 
-    private fun getTask() = listOf(
+    private fun getTask() {
 
-        Task("1", "Tarefa Teste 1", Status.TODO),
-        Task("2", "Tarefa Teste 2", Status.TODO)
-    )
+        val taskList = listOf(
+
+            Task("1", "Tarefa Teste 1", Status.TODO),
+            Task("2", "Tarefa Teste 2", Status.TODO)
+        )
+        taskAdapter.submitList(taskList)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

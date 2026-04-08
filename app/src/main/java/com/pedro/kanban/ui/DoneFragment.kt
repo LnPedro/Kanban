@@ -36,31 +36,36 @@ class DoneFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initRecyclerViewTask(getTask())
+        initRecyclerViewTask()
+        getTask()
     }
 
-    private fun initRecyclerViewTask(taskList: List<Task>) {
+    private fun initRecyclerViewTask() {
+        taskAdapter = TaskAdapter(requireContext()) {
+                task, option -> optionSelected(task, option)
+        }
 
-        taskAdapter = TaskAdapter(requireContext(), taskList) { task, option -> optionSelected(task, option)}
-        binding.recyclerViewTask.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewTask.setHasFixedSize(true)
-
-        binding.recyclerViewTask.adapter = taskAdapter
+        with(binding.recyclerViewTask) {
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(true)
+            adapter = taskAdapter
+        }
 
     }
 
     private fun optionSelected(task:Task, option: Int){
 
-
-
-
     }
 
-    private fun getTask() = listOf(
+    private fun getTask() {
 
-        Task("5", "Tarefa Teste 5",Status.DONE),
-        Task("6", "Tarefa Teste 6",Status.DONE)
-    )
+        val taskList = listOf(
+
+            Task("1", "Tarefa Teste 1", Status.DONE),
+            Task("2", "Tarefa Teste 2", Status.DONE)
+        )
+        taskAdapter.submitList(taskList)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -18,7 +18,6 @@ import com.pedro.kanban.databinding.ItemTaskBinding
 
 class TaskAdapter(
     private val context: Context,
-    private val taskList: List<Task>,
     private val taskSelected: (Task, Int) -> Unit
 
 ): ListAdapter<Task, TaskAdapter.MyViewHolder>(DIFF_CALLBACK){
@@ -33,7 +32,7 @@ class TaskAdapter(
         val SELECT_NEXT: Int = 5
 
 
-        private val DIFF_CALLBACK = object : DiffUtil.itemCallBack<Task>(){
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Task>(){
 
             override fun areItemsTheSame(
                 oldItem: Task,
@@ -41,7 +40,8 @@ class TaskAdapter(
             ): Boolean{
                 return oldItem.id == newItem.id && oldItem.description == newItem.description
             }
-            override fun areConstentsTheSame(
+
+            override fun areContentsTheSame(
                 oldItem: Task,
                 newItem: Task
             ): Boolean{
@@ -58,7 +58,7 @@ class TaskAdapter(
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val task = taskList[position]
+        val task = getItem(position)
         holder.binding.textDescription.text = task.description
         setIndicators(task, holder)
 
@@ -96,7 +96,7 @@ class TaskAdapter(
 
     }
 
-    override fun getItemCount() = taskList.size
+
     inner class MyViewHolder(val binding: ItemTaskBinding): RecyclerView.ViewHolder(binding.root){
 
     }
