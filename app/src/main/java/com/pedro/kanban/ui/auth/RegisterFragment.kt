@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.pedro.kanban.R
 import com.pedro.kanban.databinding.FragmentRegisterBinding
 import com.pedro.kanban.util.initToolbar
@@ -16,6 +17,11 @@ class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
+
+    //Variavel auth
+
+    private lateinit var auth = FirebaseAuth
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
