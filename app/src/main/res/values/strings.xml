@@ -26,6 +26,8 @@
     <string name="text_title_form_task_fragment">Nova Tarefa</string>
     <string name="description_empty_form_task_fragment">Descrição</string>
     <string name="situation_form_task_fragment">Situação</string>
+    <string name="text_save_sucess_form_task_fragment">Sucesso</string>
+    <string name="error_generic">ERRO</string>
 
     <!-- Register Fragment -->
     <string name="text_title_register_fragment">Criar Conta</string>
