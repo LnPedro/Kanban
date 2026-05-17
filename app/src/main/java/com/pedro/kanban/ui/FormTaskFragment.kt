@@ -43,7 +43,6 @@ class FormTaskFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentFormTaskBinding.inflate(inflater, container, false)
-        reference = Firebase.database.reference
         auth = Firebase.auth
 
         return binding.root
@@ -52,6 +51,7 @@ class FormTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar(binding.toolbar)
+        reference = Firebase.database.reference
         initListner()
     }
 
@@ -98,10 +98,12 @@ class FormTaskFragment : Fragment() {
 
         if (description.isNotBlank()){
             binding.progressBar.isVisible = true
+
             if (newTask) task = Task()
             task.id = reference.database.reference.push().key?:""
             task.description = description
             task.status = status
+
             saveTask()
             Toast.makeText(requireContext(), "Nova tarefa criada", Toast.LENGTH_SHORT).show()
         } else {
